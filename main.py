@@ -9,7 +9,7 @@ import current_number_of_recovered_people
 import current_number_of_people_tested_with_positive_negative_cases
 import current_number_of_people_hospitalized_in_icu_and_recovered
 import current_number_of_tested_people_and_positive_cases
-import current_ratio_of_positive_cases_to_total_tests
+import current_ratio_of_positive_cases_to_tested_people
 import current_ratio_of_deaths_to_positive_cases
 
 
@@ -29,29 +29,29 @@ FOR EXAMPLE, TO GRAPH THE CURRENT NUMBER OF DEATHS, ENTER [python3 main.py -aa] 
 *** STATE CHOICE IS SPECIFIED AFTER THE COMMAND IS RUN ***
 
 
-EXT   --   GRAPH TYPE
+EXT   --    GRAPH TYPE
 
--aa    --   CURRENT NUMBER OF DEATHS
+-aa    --   CURRENT NUMBER OF DEATHS (current_number_of_deaths.py)
 
--bb    --   CURRENT NUMBER OF POSITIVE CASES
+-bb    --   CURRENT NUMBER OF POSITIVE CASES (current_number_of_positive_cases.py)
 
--cc    --   CURRENT NUMBER OF NEGATIVE CASES
+-cc    --   CURRENT NUMBER OF NEGATIVE CASES (current_number_of_negative_cases.py)
 
--dd    --   CURRENT NUMBER OF TESTED PEOPLE
+-dd    --   CURRENT NUMBER OF TESTED PEOPLE (current_number_of_tested_people.py)
 
--ee    --   CURRENT NUMBER OF HOSPITALIZED PEOPLE
+-ee    --   CURRENT NUMBER OF HOSPITALIZED PEOPLE (current_number_of_hospitalized_people.py)
 
--ff    --   CURRENT NUMBER OF PEOPLE IN THE ICU
+-ff    --   CURRENT NUMBER OF PEOPLE IN THE ICU (current_number_of_people_in_ICU.py)
 
--gg    --   CURRENT NUMBER OF RECOVERED PEOPLE
+-gg    --   CURRENT NUMBER OF RECOVERED PEOPLE (current_number_of_recovered_people.py)
 
--hh    --   CURRENT NUMBER OF HOSPITALIZED PEOPLE, IN ICU, AND RECOVERED
+-hh    --   CURRENT NUMBER OF HOSPITALIZED PEOPLE, IN ICU, AND RECOVERED (current_number_of_people_hospitalized_in_icu_and_recovered.py)
 
--ii    --   CURRENT NUMBER OF TESTED PEOPLE AND POSITIVE CASES
+-ii    --   CURRENT NUMBER OF TESTED PEOPLE AND POSITIVE CASES (current_number_of_tested_people_and_positive_cases.py)
 
--jj    --   CURRENT RATIO OF POSITIVE CASES TO TESTED PEOPLE
+-jj    --   CURRENT RATIO OF POSITIVE CASES TO TESTED PEOPLE (current_ratio_of_positive_cases_to_tested_people.py)
 
--kk    --   CURRENT RATIO OF DEATHS TO POSITIVE CASES
+-kk    --   CURRENT RATIO OF DEATHS TO POSITIVE CASES (current_ratio_of_deaths_to_positive_cases.py)
 
 """)
 
@@ -90,7 +90,7 @@ elif args.hh:
 elif args.ii:
 	current_number_of_tested_people_and_positive_cases.main()
 elif args.jj:
-	current_ratio_of_positive_cases_to_total_tests.main()
+	current_ratio_of_positive_cases_to_tested_people.main()
 elif args.kk:
 	current_ratio_of_deaths_to_positive_cases
 else:

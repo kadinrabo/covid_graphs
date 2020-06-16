@@ -119,6 +119,13 @@ def main():
 	plt.tick_params(axis='both', which='major', labelsize='10')
 	plt.show()
 
+	again = input("WOULD YOU LIKE TO CHECK ANOTHER STATE?(y/n) ")
+	if again != 'n':
+		main()
+	else:
+		print("\nGOODBYE!\n")
+		sys.exit()
+
 
 if __name__ == "__main__":
 	main()
