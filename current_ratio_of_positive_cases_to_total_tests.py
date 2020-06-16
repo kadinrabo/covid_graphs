@@ -78,11 +78,11 @@ def main():
 			day = list_date[6:8]
 			day_formatted = ''.join(day)
 			date = f"{month_formatted}/{day_formatted}"
+			ratios.append(i['positive'] / i['total'])
 		except ZeroDivisionError:
 			continue
 		else:
 			dates.append(date)
-			ratios.append(i['positive'] / i['total'])
 
 	try:
 		ratios.reverse()
