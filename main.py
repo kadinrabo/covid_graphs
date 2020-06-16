@@ -92,6 +92,6 @@ elif args.ii:
 elif args.jj:
 	current_ratio_of_positive_cases_to_tested_people.main()
 elif args.kk:
-	current_ratio_of_deaths_to_positive_cases
+	current_ratio_of_deaths_to_positive_cases.main()
 else:
 	print("\n\nMAKE SURE YOU ENTERED A VALID COMMAND. CHECK INSTRUCTIONS.\n\n")

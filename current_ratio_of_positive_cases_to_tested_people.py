@@ -82,7 +82,10 @@ def main():
 		except ZeroDivisionError:
 			continue
 		else:
-			dates.append(date)
+			try:
+				dates.append(date)
+			except TypeError:
+				print(f"Null data point detected at {date}")
 
 	try:
 		ratios.reverse()
