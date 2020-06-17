@@ -84,7 +84,7 @@ def main():
 			try:
 				ratios.append(i['death'] / i['positive'])
 			except TypeError:
-				print(f"Null data point detected at {date}")
+				continue
 			else:
 				dates.append(date)
 
