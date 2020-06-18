@@ -1,5 +1,6 @@
 # Description
 A few graphs I made from an excellent API on https://covidtracking.com/api
+
 Check out the snapshots folder for example graphs of Arizona since 6/18
 
 # Instructions
