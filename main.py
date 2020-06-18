@@ -45,7 +45,8 @@ EXT   --    GRAPH TYPE
 
 -gg    --   CURRENT NUMBER OF RECOVERED PEOPLE (current_number_of_recovered_people.py)
 
--hh    --   CURRENT NUMBER OF HOSPITALIZED PEOPLE, IN ICU, AND RECOVERED (current_number_of_people_hospitalized_in_icu_and_recovered.py)
+-hh    --   CURRENT NUMBER OF HOSPITALIZED PEOPLE, IN ICU, AND RECOVERED (current_number_of_people_hospitalized_in_icu_
+and_recovered.py)
 
 -ii    --   CURRENT NUMBER OF TESTED PEOPLE AND POSITIVE CASES (current_number_of_tested_people_and_positive_cases.py)
 
@@ -69,7 +70,8 @@ parser.add_argument("-ii", action="store_true")
 parser.add_argument("-jj", action="store_true")
 parser.add_argument("-kk", action="store_true")
 args = parser.parse_args()
-if not (args.aa or args.bb or args.cc or args.dd or args.ee or args.ff or args.gg or args.hh or args.ii or args.jj or args.kk):
+if not (args.aa or args.bb or args.cc or args.dd or args.ee or args.ff or args.gg or args.hh or args.ii or args.jj or
+		args.kk):
 	print("\nENTER COMMAND LINE BELOW \n")
 elif args.aa:
 	current_number_of_deaths.main()
