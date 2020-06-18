@@ -1,5 +1,5 @@
-# az_covid
-    A few graphs I made from an excellent API on https://covidtracking.com/api
+# Description
+A few graphs I made from an excellent API on https://covidtracking.com/api
 
 # Instructions
     Run main.py
@@ -54,4 +54,5 @@ current_ratio_of_positive_cases_to_tested_people.py
     Displays the change in the ratio of positive cases to tested people since March 2020
 
 #Snapshots
-    Check out the snapshots folder for example graphs of Arizona, USA since 6/18
+
+Check out the snapshots folder for example graphs of Arizona, USA since 6/18
