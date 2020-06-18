@@ -5,7 +5,6 @@ A few graphs I made from an excellent API on https://covidtracking.com/api
 Run main.py
 
 # Pre-Built Graphs
-
 current_number_of_deaths.py
 
     Displays the change in deaths since March 2020 for a select state
@@ -53,3 +52,4 @@ current_ratio_of_deaths_to_positive_cases.py
 current_ratio_of_positive_cases_to_tested_people.py
 
     Displays the change in the ratio of positive cases to tested people since March 2020 for a select state
+
