@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Description
 A few graphs I made from an excellent API on https://covidtracking.com/api
 
@@ -57,4 +55,3 @@ current_ratio_of_deaths_to_positive_cases.py
 current_ratio_of_positive_cases_to_tested_people.py
 
     Displays the change in the ratio of positive cases to tested people since March 2020
->>>>>>> cd2e4cb6900ae15f5ef9eb280061bc87e00d086e
