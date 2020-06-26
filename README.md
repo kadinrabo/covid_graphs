@@ -6,7 +6,8 @@ A few graphs I made from an excellent API on https://covidtracking.com/api
 Check out the snapshots folder for example graphs of Arizona from 6/18
 
 # Instructions
-    Run main.py
+    Enter this command for requests and matplotlib: pip install -r requirements.txt  
+    Enter: python3 main.py
 
 # Pre-Built Graphs
 current_number_of_deaths.py
