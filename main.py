@@ -11,7 +11,6 @@ import current_number_of_people_hospitalized_in_icu_and_recovered
 import current_number_of_tested_people_and_positive_cases
 import current_ratio_of_positive_cases_to_tested_people
 import current_ratio_of_deaths_to_positive_cases
-import multiple_states_deaths
 
 
 print("""
@@ -75,7 +74,7 @@ parser.add_argument("-kk", action="store_true")
 parser.add_argument("-ll", action="store_true")
 args = parser.parse_args()
 if not (args.aa or args.bb or args.cc or args.dd or args.ee or args.ff or args.gg or args.hh or args.ii or args.jj or
-		args.kk or args.ll):
+		args.kk):
 	print("\nENTER COMMAND LINE BELOW \n")
 elif args.aa:
 	current_number_of_deaths.main()
@@ -99,7 +98,5 @@ elif args.jj:
 	current_ratio_of_positive_cases_to_tested_people.main()
 elif args.kk:
 	current_ratio_of_deaths_to_positive_cases.main()
-elif args.ll:
-	multiple_states_deaths.main()
 else:
 	print("\n\nMAKE SURE YOU ENTERED A VALID COMMAND. CHECK INSTRUCTIONS.\n\n")
