@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d460a42d-c45f-4f99-b74a-924b30fcd16c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/current_number_of_deaths.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/current_number_of_hospitalized_people.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/current_number_of_negative_cases.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/current_number_of_people_in_ICU.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/current_number_of_positive_cases.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/current_number_of_recovered_people.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/current_number_of_tested_people.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/multiple_states_deaths.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +57,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
@@ -45,5 +72,39 @@
       <updated>1592513304805</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="358" y="272" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1594523928164">
+      <screen x="0" y="23" width="2048" height="1257" />
+    </state>
+    <state x="358" y="272" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.2048.1257@0.23.2048.1257" timestamp="1594523928164" />
+    <state x="256" y="68" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594443640375">
+      <screen x="0" y="23" width="2048" height="1257" />
+    </state>
+    <state x="256" y="68" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.2048.1257@0.23.2048.1257" timestamp="1594443640375" />
+    <state x="752" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593153802015">
+      <screen x="0" y="23" width="2048" height="1257" />
+    </state>
+    <state x="752" y="509" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.2048.1257@0.23.2048.1257" timestamp="1593153802015" />
+    <state width="750" height="540" key="javadoc.popup" timestamp="1594543474777">
+      <screen x="0" y="23" width="2048" height="1257" />
+    </state>
+    <state width="750" height="540" key="javadoc.popup/0.23.2048.1257@0.23.2048.1257" timestamp="1594543474777" />
+    <state x="361" y="248" width="838" height="1032" key="search.everywhere.popup" timestamp="1594338304307">
+      <screen x="0" y="23" width="2048" height="1257" />
+    </state>
+    <state x="361" y="248" width="838" height="1032" key="search.everywhere.popup/0.23.2048.1257@0.23.2048.1257" timestamp="1594338304307" />
   </component>
 </project>
