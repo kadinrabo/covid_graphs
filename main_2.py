@@ -1,11 +1,8 @@
 import argparse
-import single_2_current_number_of_deaths
-import single_2_current_number_of_positive_cases
-import single_2_current_number_of_negative_cases
-import single_2_current_number_of_tested_people
-import single_2_current_number_of_hospitalized_people
-import single_2_current_number_of_people_in_icu
-import single_2_current_number_of_recovered_people
+import requests
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+import sys
 
 
 def main():
@@ -19,54 +16,146 @@ def main():
 	parser.add_argument("-recovered", action="store_true")
 	args = parser.parse_args()
 
-	print("""
+	if not (
+			args.deaths or args.positive or args.negative or args.tested or args.hospitalized or args.icu or args.recovered):
+		print("""
 -----------------------------------------------------------------------------------------------
 >
 Here are the statistic options, and their corresponding commands. Run any of them.
 Remember, you chose one statistic and two states.
 >
+For example...
+Current number of NEGATIVE CASES
+-  Command: python3 main_1.py -negative
 
-1. Current number of DEATHS
--  Command: python3 main_2.py -deaths
+Pick from any of the following arguments as you form your command. Look above for an example command.
 
-2. Current number of POSITIVE CASES
--  Command: python3 main_2.py -positive
-
-3. Current number of NEGATIVE CASES
--  Command: python3 main_2.py -negative
-
-4. Current number of TESTED PEOPLE
--  Command: python3 main_2.py -tested
-
-5. Current number of HOSPITALIZED PEOPLE
--  Command: python3 main_2.py -hospitalized
-
-6. Current number of PEOPLE IN THE ICU
--  Command: python3 main_2.py -icu
-
-7. Current number of RECOVERED PEOPLE
--  Command: python3 main_2.py -recovered
+DEATHS-------------    -deaths
+POSITIVE CASES-----    -positive
+NEGATIVE CASES-----    -negative
+TESTED PEOPLE------    -tested    
+HOSPITALIZED PEOPLE    -hospitalized
+PEOPLE IN THE ICU--    -icu
+RECOVERED PEOPLE---    -recovered
 
 -----------------------------------------------------------------------------------------------
 	""")
-	if not (args.deaths or args.positive or args.negative or args.tested or args.hospitalized or args.icu or
-			args.recovered):
-		print("""Enter command below
-		""")
-	elif args.deaths:
-		single_2_current_number_of_deaths.main()
-	elif args.positive:
-		single_2_current_number_of_positive_cases.main()
-	elif args.negative:
-		single_2_current_number_of_negative_cases.main()
-	elif args.tested:
-		single_2_current_number_of_tested_people.main()
-	elif args.hospitalized:
-		single_2_current_number_of_hospitalized_people.main()
-	elif args.recovered:
-		single_2_current_number_of_people_in_ICU.main()
+		sys.exit()
+
+	state_choice = input("\nChoose a state by entering a state abbreviation: ")
+	state_choice_1 = input("\nChoose another state by entering a state abbreviation: ")
+	url = f'https://covidtracking.com/api/v1/states/{state_choice.lower()}/daily.json'
+	url_1 = f'https://covidtracking.com/api/v1/states/{state_choice_1.lower()}/daily.json'
+	r = requests.get(url)
+	r_1 = requests.get(url_1)
+	if r.status_code == 200 and r_1.status_code == 200:
+		data = r.json()
+		data_1 = r_1.json()
 	else:
-		print("\n\nMake sure you entered the command correctly!\n\n")
+		print("\nThe API has unavailable data.\n")
+		sys.exit(1)
+
+	stat_dict = ['death', 'positive', 'negative', 'total', 'hospitalized', 'inIcuCurrently', 'recovered']
+
+	labels = {'death': 'Deaths', 'positive': 'Positive Cases', 'negative': 'Negative Cases', 'total': 'Total Tested',
+			  'hospitalized': 'Hospitalizations', 'inIcuCurrently': 'In ICU', 'recovered': 'Recoveries'}
+
+	api_heading = []
+
+	if args.deaths:
+		api_heading.append(stat_dict[0])
+	if args.positive:
+		api_heading.append(stat_dict[1])
+	if args.negative:
+		api_heading.append(stat_dict[2])
+	if args.tested:
+		api_heading.append(stat_dict[3])
+	if args.hospitalized:
+		api_heading.append(stat_dict[4])
+	if args.icu:
+		api_heading.append(stat_dict[5])
+	if args.recovered:
+		api_heading.append(stat_dict[6])
+
+	dates, stat_1, stat_2 = [], [], []
+
+	for i in data:
+		list_date = [i for i in str(i['date'])]
+		month = list_date[5]
+		month_formatted = ''.join(month)
+		day = list_date[6:8]
+		day_formatted = ''.join(day)
+		date = f"{month_formatted}/{day_formatted}"
+		dates.append(date)
+		stat_1.append(i[api_heading[0]])
+	for i in data_1:
+		stat_2.append(i[api_heading[0]])
+	label = labels[api_heading[0]]
+
+	try:
+		stat_1.reverse()
+		stat_2.reverse()
+		dates.reverse()
+	except TypeError:
+		print("Some data points null.")
+	dates_list = []
+	for k, v in enumerate(dates):
+		if k % 10 == 0:
+			dates_list.append(v)
+		else:
+			dates_list.append("")
+	plt.style.use('classic')
+	fig, ax = plt.subplots()
+	try:
+		ax.plot(dates, stat_1, c='red', linewidth=5)
+		ax.plot(dates, stat_2, c='blue', linewidth=5)
+	except ValueError:
+		print("""
+
+Sorry, but these three states don't have the same number of available data points. 
+You can try and graph them individually or use a different combination of states.
+
+	""")
+	ax.set_xticks(dates_list)
+	fig.autofmt_xdate()
+	plt.grid()
+	red_patch = mpatches.Patch(color='red', label=f'{state_choice.upper()}')
+	blue_patch = mpatches.Patch(color='blue', label=f'{state_choice_1.upper()}')
+	plt.legend(handles=[red_patch, blue_patch])
+	plt.title(f'Current number of COVID-19 related {label} in {state_choice.upper()} and {state_choice_1.upper()} since '
+			  f'March 2020.\n')
+	plt.xlabel('Date', fontsize=15)
+	plt.ylabel('Quantity', fontsize=15)
+	plt.tick_params(axis='both', which='major', labelsize='10')
+	plt.show()
+	again = input("Would you like to graph another state for the same statistics?(y/n) ")
+	if again != 'n':
+		print("""
+-----------------------------------------------------------------------------------------------
+>
+Here are the statistic options, and their corresponding commands. Run any of them.
+Remember, you chose one statistic and two states.
+>
+For example...
+Current number of NEGATIVE CASES
+-  Command: python3 main_1.py -negative
+
+Pick from any of the following arguments as you form your command. Look above for an example command.
+
+DEATHS-------------    -deaths
+POSITIVE CASES-----    -positive
+NEGATIVE CASES-----    -negative
+TESTED PEOPLE------    -tested    
+HOSPITALIZED PEOPLE    -hospitalized
+PEOPLE IN THE ICU--    -icu
+RECOVERED PEOPLE---    -recovered
+
+-----------------------------------------------------------------------------------------------
+	""")
+		main()
+	else:
+		print("\nGoodbye!\n")
+		sys.exit()
 
 
 if __name__ == "__main__":
