@@ -110,7 +110,7 @@ RECOVERED PEOPLE---    -recovered
 	plt.ylabel('Quantity', fontsize=15)
 	plt.tick_params(axis='both', which='major', labelsize='10')
 	plt.show()
-	again = input("Would you like to graph another state for the same statistics?(y/n) ")
+	again = input("Again?(y/n) ")
 	if again != 'n':
 		print("""
 -----------------------------------------------------------------------------------------------
