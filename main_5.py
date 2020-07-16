@@ -116,26 +116,26 @@ RECOVERED PEOPLE---    -recovered
 	plt.grid()
 	red_patch = mpatches.Patch(color='red', label=label_1)
 	blue_patch = mpatches.Patch(color='blue', label=label_2)
-	green_patch = mpatches.Patch(color='green', label=label_2)
+	green_patch = mpatches.Patch(color='green', label=label_3)
 	plt.legend(handles=[red_patch, blue_patch, green_patch])
 
 	plt.xlabel('Date', fontsize=15)
 	plt.ylabel('Quantity', fontsize=15)
 	plt.tick_params(axis='both', which='major', labelsize='10')
 	plt.show()
-	again = input("Would you like to graph another state for the same statistics?(y/n) ")
+	again = input("Again?(y/n) ")
 	if again != 'n':
 		print("""
 -----------------------------------------------------------------------------------------------
 >
 Here are the statistic options, and their corresponding commands. Run any of them.
-Remember, you chose two statistics and 1 state.
+Remember, you chose three statistics and 1 state.
 >
 For example...
-Current number of NEGATIVE CASES and POSITIVE CASES
--  Command: python3 main_4.py -negative -positive
+Current number of NEGATIVE CASES and POSITIVE CASES and NEGATIVE CASES
+-  Command: python3 main_5.py -negative -positive -negative
 or
--  Command: python3 main_4.py -positive -negative
+-  Command: python3 main_5.py -positive -negative -negative
 
 As you can see, order doesn't matter for the arguments. Just pick from any of the following
 arguments as you form your command. Look above for an example command.

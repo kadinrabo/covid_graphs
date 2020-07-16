@@ -121,8 +121,8 @@ RECOVERED PEOPLE---    -recovered
 	except ValueError:
 		print("""
 
-Sorry, but these three states don't have the same number of available data points. 
-You can try and graph them individually or use a different combination of states.
+Sorry, but there was an error graphing the data you chose. 
+You can try and graph the data individually.
 
 """)
 		sys.exit(1)
@@ -139,7 +139,7 @@ You can try and graph them individually or use a different combination of states
 	plt.ylabel('Quantity', fontsize=15)
 	plt.tick_params(axis='both', which='major', labelsize='10')
 	plt.show()
-	again = input("Would you like to graph another state for the same statistics?(y/n) ")
+	again = input("Again?(y/n) ")
 	if again != 'n':
 		print("""
 -----------------------------------------------------------------------------------------------
