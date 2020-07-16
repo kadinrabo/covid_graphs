@@ -6,11 +6,11 @@ import main_5
 
 print("""
 >
->
->
+>>
+>>>
 Welcome to my graphing tool! Let's gather some data first
->
->
+>>>
+>>
 >
 """)
 
