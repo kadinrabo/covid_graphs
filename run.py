@@ -3,6 +3,7 @@ import main_2
 import main_3
 import main_4
 import main_5
+import main_6
 
 print("""
 >
@@ -28,7 +29,7 @@ elif int(statistic_choice) == 2:
 	if int(state_choice) == 1:
 		main_4.main()
 	elif int(state_choice) == 2:
-		print("Functionality not yet available.")
+		main_6.main()
 	elif int(state_choice) == 3:
 		print("Functionality not yet available.")
 elif int(statistic_choice) == 3:
